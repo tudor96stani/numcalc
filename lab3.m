@@ -40,8 +40,8 @@ end
 plot(xplot,l);
 legend('f','polynomial');
 
-%Facultatives
-disp('Facultatives')
+%Facultative
+disp('Facultative')
 %1
 clear
 x=(-pi/4):0.01:(pi/2);
@@ -171,10 +171,12 @@ f=(1+x.^2).^(-1);
 figure;
 plot(x,f);
 hold on;
-xx = linspace(min(xi),max(xi),100); 
-yy = spline(xi,fi,xx); 
-plot(xi,fi,'o',xx,yy);
-legend('f','nodes','approximation');
+l=zeros(size(x));
+for i=1:length(l)
+    l(i)=lagrInter(xi,fi,x(i));
+end
+plot(x,l);
+legend('f','polynomial');
 
 %c
 clear
@@ -189,7 +191,9 @@ f=(1+x.^2).^(-1);
 figure;
 plot(x,f);
 hold on;
-xx = linspace(min(xi),max(xi),100); 
-yy = spline(xi,fi,xx); 
-plot(xi,fi,'o',xx,yy);
-legend('f','nodes','approximation');
+l=zeros(size(x));
+for i=1:length(l)
+    l(i)=lagrInter(xi,fi,x(i));
+end
+plot(x,l);
+legend('f','polynomial');
